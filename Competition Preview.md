@@ -1,7 +1,4 @@
 # Competition Preview
-*Jingyu WANG*
-*21-956-453*
-
 The image showed here consists 72 shapes and about 150000 primitives. It's rendered using 512 spp to a 1920x1080 HD image.
 
 The image is essentially a duality of fish tank in a room, i.e. the room is now in a tank floating on the sea. A girl and a corgi are confined in the tank and fishes swim around them. You could also see corals and starfishes on the seafloor. 

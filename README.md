@@ -2,9 +2,6 @@ This repo holds the final project of ETHz Computer Graphics cource. You could fi
 
 # Computer Graphics ETHz 2022 Rendering Project
 
-*Name: Jingyu Wang*  
-*Legi: 21-956-453*
-
 Theme of this year:  
 Many things have their dedicated place to be. For this competition, we want to escape the ordinary and allow everything to be "out of place".
 
