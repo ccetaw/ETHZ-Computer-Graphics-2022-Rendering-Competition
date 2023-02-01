@@ -1,0 +1,53 @@
+<scene version="2.1.0">
+
+<!-- Defaults, these can be set via the command line: -Darg=value -->
+
+	<default name="spp" value="256"/>
+	<default name="resx" value="800"/>
+	<default name="resy" value="600"/>
+
+<!-- Camera and Rendering Parameters -->
+
+	<integrator type="path">
+		<integer name="max_depth" value="100"/>
+	</integrator>
+	<sensor type="perspective">
+		<string name="fov_axis" value="x"/>
+		<float name="fov" value="25"/>
+		<transform name="to_world">
+			<rotate x="1" angle="-142.8388445275062"/>
+			<rotate y="1" angle="5.364201596012099e-06"/>
+			<rotate z="1" angle="-179.999991348578"/>
+			<translate value="0.000881 0.599336 0.768034"/>
+		</transform>
+		<sampler type="independent">
+			<integer name="sample_count" value="$spp"/>
+		</sampler>
+		<film type="hdrfilm">
+			<integer name="width" value="$resx"/>
+			<integer name="height" value="$resy"/>
+		</film>
+	</sensor>
+
+
+<!-- Emitters -->
+	<emitter type="envmap" id="emitter-envmap">
+        <string name="filename" value="limpopo_golf_course_4k.exr" />
+        <!-- <transform name="to_world">
+            <rotate y="1" angle="-180" />
+        </transform> -->
+    </emitter>
+	
+
+<!-- Shapes -->
+	<shape type="sphere">
+		<point name="center" x="0" y="0" z="0"/>
+		<float name="radius" value="0.1"/>
+		<bsdf type="dielectric">
+			<float name="int_ior" value="0.01"/>
+			<float name="ext_ior" value="1.0"/>
+		</bsdf>
+	</shape>
+
+	
+</scene>

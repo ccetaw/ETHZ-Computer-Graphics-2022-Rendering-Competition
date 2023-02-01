@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<scene>
+	<integrator type="path_mis"/>
+	<!-- <integrator type="photonmapper">
+		<integer name="photonCount" value="10000000"/>
+		<float name="photonRadius" value="0"/>
+	</integrator> -->
+	<sampler type="independent">
+		<integer name="sampleCount" value="256"/>
+	</sampler>
+	<camera type="perspective">
+		<float name="fov" value="20"/>
+		<float name="nearClip" value="0.10000000149011612"/>
+		<float name="farClip" value="100.0"/>
+		<integer name="width" value="600"/>
+		<integer name="height" value="600"/>
+		<transform name="toWorld">
+			<scale value="1.000000 1.000000 -1.000000"/>
+			<matrix value="-4.371138828673793e-08,4.371138828673793e-08,1.0,16.0,1.0,1.910685676922942e-15,4.371138828673793e-08,0.0,0.0,1.0,-4.371138828673793e-08,2.5,0.0,0.0,0.0,1.0"/>
+		</transform>
+	</camera>
+	<mesh type="obj">
+		<string name="filename" value="meshes/case_case.001.obj"/>
+		<bsdf type="disney" name="case.001">
+			<color name="baseColor" value="0.8,0.8,0.2"/>
+			<float name="metallic" value="0"/>
+			<float name="subsurface" value="0"/>
+			<float name="specular" value="0"/>
+			<float name="specularTint" value="0"/>
+			<float name="roughness" value="0.2"/>
+			<float name="anisotropic" value="0"/>
+			<float name="sheen" value="0"/>
+			<float name="sheenTint" value="0"/>
+			<float name="clearcoat" value="1"/>
+			<float name="clearcoatGloss" value="0"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/inside_inside.001.obj"/>
+		<bsdf type="diffuse" name="inside.001">
+			<color name="albedo" value="0.800000,0.800000,0.800000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/light_Material.001.obj"/>
+		<bsdf type="diffuse" name="Material.001">
+			<color name="albedo" value="0,0,0"/>
+		</bsdf>
+		<emitter type="area">
+			<color name="radiance" value="5, 5, 5"/>
+		</emitter>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Cube_white.obj"/>
+		<bsdf type="diffuse" name="white">
+			<color name="albedo" value="1.000000,1.000000,1.000000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Cube_red.obj"/>
+		<bsdf type="diffuse" name="red">
+			<color name="albedo" value="0.800000,0.027004,0.031991"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Cube_blue.obj"/>
+		<bsdf type="diffuse" name="blue">
+			<color name="albedo" value="0.040187,0.046889,0.800000"/>
+		</bsdf>
+	</mesh>
+</scene>

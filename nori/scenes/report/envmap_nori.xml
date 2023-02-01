@@ -1,0 +1,38 @@
+<?xml version="1.0" ?>
+<scene>
+	<integrator type="path_mis"/>
+	<sampler type="independent">
+		<integer name="sampleCount" value="256"/>
+	</sampler>
+	<camera type="perspective">
+		<float name="fov" value="25"/>
+		<integer name="width" value="800"/>
+		<integer name="height" value="600"/>
+		<transform name="toWorld">
+			<scale value="1.000000 1.000000 -1.000000"/>
+			<matrix value="0.08086740970611572,2.051692593596499e-09,-8.753717750664691e-10,0.0008814155007712543,-1.9369612580533158e-09,0.048848707228899,-0.06444646418094635,-0.7680339813232422,-1.1062983862331066e-09,0.06444646418094635,0.048848707228899,0.5993359684944153,0.0,0.0,0.0,1.0"/>
+		</transform>
+	</camera>
+
+
+
+	<emitter type="env" id="emitter-envmap">
+        <string name="filename" value="limpopo_golf_course_4k.exr" />
+        <transform name="toWorld">
+            <rotate axis="1, 0, 0" angle="0" />
+			<rotate axis="0, 1, 0" angle="0" />
+			<rotate axis="0, 0, 1" angle="90" />
+        </transform>
+    </emitter>
+
+	<mesh type="sphere">
+		<point name="center" value="0 0 0" />
+		<float name="radius" value="0.1" />
+
+		<bsdf type="dielectric">
+			<float name="intIOR" value="0.01"/>
+			<float name="extIOR" value="1.0"/>
+		</bsdf>
+
+	</mesh>
+</scene>

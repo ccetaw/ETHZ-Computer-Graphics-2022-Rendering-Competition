@@ -1,0 +1,864 @@
+<?xml version="1.0" ?>
+<scene>
+	<integrator type="volpath"/>
+	<sampler type="independent">
+		<integer name="sampleCount" value="512"/>
+	</sampler>
+	<camera type="perspective">
+		<float name="fov" value="83.97442327907126"/>
+		<float name="nearClip" value="0.10000000149011612"/>
+		<float name="farClip" value="3000.0"/>
+		<integer name="width" value="1920"/>
+		<integer name="height" value="1080"/>
+		<transform name="toWorld">
+			<scale value="1.000000 1.000000 -1.000000"/>
+			<matrix value="0.10686937719583511,-0.17906081676483154,0.9780164361000061,40.560218811035156,0.9942730665206909,0.019237633794546127,-0.10512363165616989,-14.646394729614258,8.800036084721796e-06,0.9836499094963074,0.1800912618637085,6.357470512390137,0.0,0.0,0.0,1.0"/>
+		</transform>
+	</camera>
+	<mesh type="obj">
+		<string name="filename" value="meshes/sea2.obj"/>
+		<bsdf type="dielectric" name="Material.009">
+			<color name="reflectance" value="0.1, 0.2, 0.2"/>
+			<float name="intIOR" value="1.333000"/>
+		</bsdf>
+		<medium type="homogeneous">
+			<color name="sigma_a" value="0.3, 0.12, 0.12"/>
+			<color name="sigma_s" value="0.01, 0.05, 0.05"/>
+			<phase type="HenyeyGreenstein">
+				<float name="g" value="0.99"/>
+			</phase>
+		</medium>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/tankceil.obj"/>
+		<bsdf type="dielectric" name="tankceil">
+			<texture type="image_texture" name="transmittance">
+				<string name="filename" value="textures/Caustic2.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+		<float name="intIOR" value="1.01"/>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/fishtank.obj"/>
+		<bsdf type="bubble" name="fishtank">
+			<color name="transmittance" value="0.8, 0.8, 0.8"/>
+		</bsdf>
+		<medium type="homogeneous">
+			<color name="sigma_a" value="0.04, 0.04, 0.04"/>
+			<color name="sigma_s" value="0.01, 0.01, 0.01"/>
+			<phase type="HenyeyGreenstein">
+				<float name="g" value="0.99"/>
+			</phase>
+		</medium>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/tankfloor.obj"/>
+		<bsdf type="twosided" name="tankfloor">
+			<color name="albedo" value="1,0.92,0.75"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/dolphin.obj"/>
+		<bsdf type="diffuse" name="dolphin">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/dolphin_diffuse.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/Manta_Ray.obj"/>
+		<bsdf type="diffuse" name="Manta Ray">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/Manta_Ray_Color.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/TV.obj"/>
+		<bsdf type="disney" name="TV">
+			<color name="baseColor" value="0.010906,0.010906,0.010906"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="subsurface" value="0.000000"/>
+			<float name="specular" value="0.500000"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.500000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/corgi.obj"/>
+		<bsdf type="diffuse" name="corgi">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/corgi.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+
+
+	<!-- <mesh type="obj">
+		<string name="filename" value="meshes/seafloor.obj"/>
+		<bsdf type="twosided" name="seafloor">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/seafloor.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+		<medium type="homogeneous">
+			<color name="sigma_a" value="0.3, 0.12, 0.12"/>
+			<color name="sigma_s" value="0.01, 0.05, 0.05"/>
+			<phase type="HenyeyGreenstein">
+				<float name="g" value="0.99"/>
+			</phase>
+		</medium>
+		<medium type="homogeneous">
+			<color name="sigma_a" value="0.3, 0.12, 0.12"/>
+			<color name="sigma_s" value="0.01, 0.05, 0.05"/>
+			<phase type="HenyeyGreenstein">
+				<float name="g" value="0.99"/>
+			</phase>
+		</medium>
+	</mesh> -->
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/stylized_eklhorn_coral_001.obj"/>
+		<bsdf type="diffuse" name="stylized eklhorn coral.001">
+			<color name="albedo" value="0.800000,0.800000,0"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/stylized_eklhorn_coral_002.obj"/>
+		<bsdf type="diffuse" name="stylized eklhorn coral.002">
+			<color name="albedo" value="0.800000,0.800000,0"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/stylized_eklhorn_coral_003.obj"/>
+		<bsdf type="diffuse" name="stylized eklhorn coral.003">
+			<color name="albedo" value="0.800000,0.800000,0"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/Anenome_Cluster_001.obj"/>
+		<bsdf type="disney" name="Anenome Cluster.001">
+			<color name="baseColor" value="0.152507,0.152141,0.054843"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="subsurface" value="0.272727"/>
+			<float name="specular" value="0.190909"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Anenome_Cluster_002.obj"/>
+		<bsdf type="disney" name="Anenome Cluster.001">
+			<color name="baseColor" value="0.152507,0.152141,0.054843"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="subsurface" value="0.272727"/>
+			<float name="specular" value="0.190909"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Anenome_Cluster_003.obj"/>
+		<bsdf type="disney" name="Anenome Cluster.001">
+			<color name="baseColor" value="0.152507,0.152141,0.054843"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="subsurface" value="0.272727"/>
+			<float name="specular" value="0.190909"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.000000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+		<!-- <emitter type="area">
+			<color name="radiance" value="0.05,0.05,0"/>
+		</emitter> -->
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/Starfish.obj"/>
+		<bsdf type="diffuse" name="Starfish.Regular.001">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/starfishTEX2.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+	
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/BulbStructure_WhiteMetal_001.obj"/>
+		<bsdf type="disney" name="WhiteMetal.002">
+			<color name="baseColor" value="0.860172,0.860172,0.860172"/>
+			<float name="metallic" value="0.266055"/>
+			<float name="subsurface" value="0.000000"/>
+			<float name="specular" value="0.261468"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.307339"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/BulbStructure_black-plastic_001.obj"/>
+		<bsdf type="disney" name="black-plastic.002">
+			<color name="baseColor" value="0.007926,0.007926,0.007926"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="subsurface" value="0.000000"/>
+			<float name="specular" value="0.233945"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.389908"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/BulbStructure_bulb_001.obj"/>
+		<bsdf type="diffuse" name="bulb.002">
+			<color name="albedo" value="0.800000,0.800000,0.800000"/>
+		</bsdf>
+		<!-- <emitter type="area">
+			<color name="radiance" value="18,18,8"/>
+		</emitter> -->
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/BulbStructure_BlackMetal_001.obj"/>
+		<bsdf type="disney" name="BlackMetal.002">
+			<color name="baseColor" value="0.007926,0.007926,0.007926"/>
+			<float name="metallic" value="0.284404"/>
+			<float name="subsurface" value="0.000000"/>
+			<float name="specular" value="0.307339"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.243119"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/BulbStructure_LampShade_001.obj"/>
+		<bsdf type="diffuse" name="LampShade.002">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/shade_lamp_texture_with_bands.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/BulbStructure_WhiteMetal_002.obj"/>
+		<bsdf type="disney" name="WhiteMetal.002">
+			<color name="baseColor" value="0.860172,0.860172,0.860172"/>
+			<float name="metallic" value="0.266055"/>
+			<float name="subsurface" value="0.000000"/>
+			<float name="specular" value="0.261468"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.307339"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/BulbStructure_black-plastic_002.obj"/>
+		<bsdf type="disney" name="black-plastic.002">
+			<color name="baseColor" value="0.007926,0.007926,0.007926"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="subsurface" value="0.000000"/>
+			<float name="specular" value="0.233945"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.389908"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/BulbStructure_bulb_002.obj"/>
+		<bsdf type="diffuse" name="bulb.002">
+			<color name="albedo" value="0.800000,0.800000,0.800000"/>
+		</bsdf>
+		<!-- <emitter type="area">
+			<color name="radiance" value="18,18,8"/>
+		</emitter> -->
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/BulbStructure_BlackMetal_002.obj"/>
+		<bsdf type="disney" name="BlackMetal.002">
+			<color name="baseColor" value="0.007926,0.007926,0.007926"/>
+			<float name="metallic" value="0.284404"/>
+			<float name="subsurface" value="0.000000"/>
+			<float name="specular" value="0.307339"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.243119"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/BulbStructure_LampShade_002.obj"/>
+		<bsdf type="diffuse" name="LampShade.002">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/shade_lamp_texture_with_bands.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/atlantic_blue_tang_fish_001.obj"/>
+		<bsdf type="diffuse" name="atlantic blue tang fish_002">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/atlantic_blue_tang_fish.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/atlantic_blue_tang_fish_002.obj"/>
+		<bsdf type="diffuse" name="atlantic blue tang fish_002">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/atlantic_blue_tang_fish.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/atlantic_blue_tang_fish_003.obj"/>
+		<bsdf type="diffuse" name="atlantic blue tang fish_002">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/atlantic_blue_tang_fish.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/blueface_angelfish_001.obj"/>
+		<bsdf type="diffuse" name="blueface angelfish_001">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/blueface_angelfish.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/blueface_angelfish_002.obj"/>
+		<bsdf type="diffuse" name="blueface angelfish_002">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/blueface_angelfish.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/blueface_angelfish_003.obj"/>
+		<bsdf type="diffuse" name="blueface angelfish_003">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/blueface_angelfish.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/blueface_angelfish_004.obj"/>
+		<bsdf type="diffuse" name="blueface angelfish_003">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/blueface_angelfish.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/yellow_tang_fish_001.obj"/>
+		<bsdf type="diffuse" name="Material.001">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/yellow_tang_fish.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/yellow_tang_fish_002.obj"/>
+		<bsdf type="diffuse" name="Material.001">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/yellow_tang_fish.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/yellow_tang_fish_003.obj"/>
+		<bsdf type="diffuse" name="Material.001">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/yellow_tang_fish.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/yellow_tang_fish_004.obj"/>
+		<bsdf type="diffuse" name="Material.001">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/yellow_tang_fish.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/Copperband_Butterfly_fish_001.obj"/>
+		<bsdf type="diffuse" name="Copperband Butterfly fish.001">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/Copperband_Butterfly_fish.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Copperband_Butterfly_fish_002.obj"/>
+		<bsdf type="diffuse" name="Copperband Butterfly fish.002">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/Copperband_Butterfly_fish.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Copperband_Butterfly_fish_003.obj"/>
+		<bsdf type="diffuse" name="Copperband Butterfly fish.002">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/Copperband_Butterfly_fish.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/clock_base.obj"/>
+		<bsdf type="disney" name="oslo.base">
+			<color name="baseColor" value="1.000000,0.967616,0.874173"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="subsurface" value="0.000000"/>
+			<float name="specular" value="0.500000"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.650000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/clock_metal.obj"/>
+		<bsdf type="disney" name="oslo.metal">
+			<color name="baseColor" value="0.800000,0.800000,0.800000"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="subsurface" value="0.000000"/>
+			<float name="specular" value="0.500000"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.350000"/>
+			<float name="anisotropic" value="1.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/clock_minute.obj"/>
+		<bsdf type="disney" name="oslo.h.m">
+			<color name="baseColor" value="0.005603,0.005603,0.005603"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="subsurface" value="0.000000"/>
+			<float name="specular" value="0.500000"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.650000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/clock_hour.obj"/>
+		<bsdf type="disney" name="oslo.h.m">
+			<color name="baseColor" value="0.005603,0.005603,0.005603"/>
+			<float name="metallic" value="1.000000"/>
+			<float name="subsurface" value="0.000000"/>
+			<float name="specular" value="0.500000"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.650000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+	</mesh>
+	
+
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/table.obj"/>
+		<bsdf type="disney" name="table">
+			<color name="baseColor" value="0.800000,0.800000,0.800000"/>
+			<float name="metallic" value="0.400000"/>
+			<float name="subsurface" value="0.000000"/>
+			<float name="specular" value="0.500000"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.522222"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/table_ring.obj"/>
+		<bsdf type="disney" name="table_ring">
+			<color name="baseColor" value="0.820785,0.693489,0.178988"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="subsurface" value="0.000000"/>
+			<float name="specular" value="0.500000"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.500000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/Sphere_001.obj"/>
+		<bsdf type="bubble">
+			<color name="reflectance" value="0.8 1 1"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Sphere_002.obj"/>
+		<bsdf type="bubble">
+			<color name="reflectance" value="1 1 0.8"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Sphere_003.obj"/>
+		<bsdf type="bubble">
+			<color name="reflectance" value="0.8 1 1"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Sphere_004.obj"/>
+		<bsdf type="bubble">
+			<color name="reflectance" value="0.8 1 1"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Sphere_005.obj"/>
+		<bsdf type="bubble">
+			<color name="reflectance" value="1 1 0.8"/>
+		</bsdf>
+	</mesh>
+
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/Object_9_material.001.obj"/>
+		<bsdf type="microfacet" name="material.001">
+			<color name="kd" value="0.396441,0.298162,0.173661"/>
+			<float name="alpha" value="0.600000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Object_8_material.001.obj"/>
+		<bsdf type="microfacet" name="material.001">
+			<color name="kd" value="0.396441,0.298162,0.173661"/>
+			<float name="alpha" value="0.600000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Object_7_material.001.obj"/>
+		<bsdf type="microfacet" name="material.001">
+			<color name="kd" value="0.396441,0.298162,0.173661"/>
+			<float name="alpha" value="0.600000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Object_6_eyes_outer.001.obj"/>
+		<bsdf type="microfacet" name="eyes_outer.001">
+			<color name="kd" value="0.600000,0.600000,0.600000"/>
+			<float name="alpha" value="0.000000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Object_5_eyes_inner.001.obj"/>
+		<bsdf type="microfacet" name="eyes_inner.001">
+			<color name="kd" value="0.000000,0.000000,0.000000"/>
+			<float name="alpha" value="1.000000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Object_4_eyelash.001.obj"/>
+		<bsdf type="microfacet" name="eyelash.001">
+			<color name="kd" value="0.000000,0.000000,0.000000"/>
+			<float name="alpha" value="1.000000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Object_3_cloth.001.obj"/>
+		<bsdf type="twosided" name="cloth.001">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/cloth_specularGlossiness.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Object_2_body.001.obj"/>
+		<bsdf type="diffuse" name="body.001">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/body_diffuse.png"/>
+				<string name="interpolation" value="nearest"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Object_18_tear.001.obj"/>
+		<bsdf type="microfacet" name="tear.001">
+			<color name="kd" value="1.000000,1.000000,1.000000"/>
+			<float name="alpha" value="0.100000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Object_17_ring.001.obj"/>
+		<bsdf type="microfacet" name="ring.001">
+			<color name="kd" value="0.100000,0.100000,0.100000"/>
+			<float name="alpha" value="0.600000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Object_16_light.001.obj"/>
+		<bsdf type="microfacet" name="light.001">
+			<color name="kd" value="0.000000,0.000000,0.000000"/>
+			<float name="alpha" value="1.000000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Object_15_hair_outer.001.obj"/>
+		<bsdf type="microfacet" name="hair_outer.001">
+			<color name="kd" value="0.800000,0.800000,0.800000"/>
+			<float name="alpha" value="0.300000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Object_14_hair_inner.001.obj"/>
+		<bsdf type="microfacet" name="hair_inner.001">
+			<color name="kd" value="0.300000,0.268881,0.206006"/>
+			<float name="alpha" value="0.400000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Object_12_material.001.obj"/>
+		<bsdf type="microfacet" name="material.001">
+			<color name="kd" value="0.396441,0.298162,0.173661"/>
+			<float name="alpha" value="0.600000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Object_11_material.001.obj"/>
+		<bsdf type="microfacet" name="material.001">
+			<color name="kd" value="0.396441,0.298162,0.173661"/>
+			<float name="alpha" value="0.600000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Object_10_material.001.obj"/>
+		<bsdf type="microfacet" name="material.001">
+			<color name="kd" value="0.396441,0.298162,0.173661"/>
+			<float name="alpha" value="0.600000"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/placard_001.obj"/>
+		<bsdf type="disney" name="Oak Teak Fine Wood Texture.003">
+			<float name="metallic" value="0.000000"/>
+			<float name="subsurface" value="0.000000"/>
+			<float name="specular" value="0.500000"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.500000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/placard_002.obj"/>
+		<bsdf type="disney" name="Oak Teak Fine Wood Texture.004">
+			<float name="metallic" value="0.000000"/>
+			<float name="subsurface" value="0.000000"/>
+			<float name="specular" value="0.500000"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.500000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/placard_003.obj"/>
+		<bsdf type="disney" name="Oak Teak Fine Wood Texture.005">
+			<color name="baseColor" value="0.033105,0.033105,0.033105"/>
+			<float name="metallic" value="0.000000"/>
+			<float name="subsurface" value="0.000000"/>
+			<float name="specular" value="0.500000"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.500000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+	</mesh>
+
+	<mesh type="obj">
+		<string name="filename" value="meshes/sofa_top.obj"/>
+		<bsdf type="disney" name="sof_top_texture">
+			<texture type="image_texture" name="baseColor">
+				<string name="filename" value="textures/sofa_top.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+			<float name="metallic" value="0.000000"/>
+			<float name="subsurface" value="0.000000"/>
+			<float name="specular" value="0.500000"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.500000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/sofa_bottom.obj"/>
+		<bsdf type="disney" name="sof_bottom_texture">
+			<texture type="image_texture" name="baseColor">
+				<string name="filename" value="textures/sofa_bottom.png"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+			<float name="metallic" value="0.000000"/>
+			<float name="subsurface" value="0.000000"/>
+			<float name="specular" value="0.500000"/>
+			<float name="specularTint" value="0.000000"/>
+			<float name="roughness" value="0.500000"/>
+			<float name="anisotropic" value="0.000000"/>
+			<float name="sheen" value="0.000000"/>
+			<float name="sheenTint" value="0.500000"/>
+			<float name="clearcoat" value="0.000000"/>
+			<float name="clearcoatGloss" value="0.030000"/>
+		</bsdf>
+	</mesh>
+
+	<emitter type="env" id="emitter-envmap">
+        <string name="filename" value="kloppenheim_06_puresky_4k.exr" />
+		<transform name="toWorld">
+            <rotate axis="1, 0, 0" angle="0" />
+			<rotate axis="0, 1, 0" angle="0" />
+			<rotate axis="0, 0, 1" angle="-50" />
+        </transform>
+    </emitter>
+	<!-- <emitter type="point">
+		<point name="position" value="21,-12.912440,-7.075048"/>
+		<color name="power" value="100,75,1"/>
+		<medium type="homogeneous">
+			<color name="sigma_a" value="0.2, 0.08, 0.08"/>
+			<color name="sigma_s" value="0.01, 0.05, 0.05"/>
+			<phase type="HenyeyGreenstein">
+				<float name="g" value="0.99"/>
+			</phase>
+		</medium>
+	</emitter> -->
+</scene>

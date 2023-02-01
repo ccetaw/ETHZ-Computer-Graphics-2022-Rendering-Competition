@@ -1,0 +1,62 @@
+<?xml version="1.0" ?>
+<scene>
+	<!-- <integrator type="path_mis"/> -->
+	<integrator type="photonmapper">
+		<integer name="photonCount" value="10000000"/>
+		<float name="photonRadius" value="0"/>
+		<!-- <integer name="numIterations" value="400"/>
+		<float name="alpha" value="0.5"/> -->
+	</integrator>
+	<sampler type="independent">
+		<integer name="sampleCount" value="512"/>
+	</sampler>
+	<camera type="perspective">
+		<float name="fov" value="30"/>
+		<float name="nearClip" value="0.10000000149011612"/>
+		<float name="farClip" value="100.0"/>
+		<integer name="width" value="800"/>
+		<integer name="height" value="600"/>
+		<transform name="toWorld">
+			<scale value="1.000000 1.000000 -1.000000"/>
+			<matrix value="-4.371138828673793e-08,4.371138828673793e-08,1.0,16.0,1.0,1.910685676922942e-15,4.371138828673793e-08,0.0,0.0,1.0,-4.371138828673793e-08,2.5,0.0,0.0,0.0,1.0"/>
+		</transform>
+	</camera>
+	<mesh type="obj">
+		<string name="filename" value="meshes/case_case.001.obj"/>
+		<bsdf type="dielectric" name="case.001">
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/inside_inside.001.obj"/>
+		<bsdf type="diffuse" name="inside.001">
+			<color name="albedo" value="0.800000,0.800000,0.800000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/light_Material.001.obj"/>
+		<bsdf type="diffuse" name="Material.001">
+			<color name="albedo" value="0,0,0"/>
+		</bsdf>
+		<emitter type="area">
+			<color name="radiance" value="5, 5, 5"/>
+		</emitter>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Cube_white.obj"/>
+		<bsdf type="diffuse" name="white">
+			<color name="albedo" value="1.000000,1.000000,1.000000"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Cube_red.obj"/>
+		<bsdf type="diffuse" name="red">
+			<color name="albedo" value="0.800000,0.027004,0.031991"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Cube_blue.obj"/>
+		<bsdf type="diffuse" name="blue">
+			<color name="albedo" value="0.040187,0.046889,0.800000"/>
+		</bsdf>
+	</mesh>
+</scene>

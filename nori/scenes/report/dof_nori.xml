@@ -1,0 +1,51 @@
+<?xml version="1.0" ?>
+<scene>
+	<integrator type="path_mis"/>
+	<sampler type="independent">
+		<integer name="sampleCount" value="256"/>
+	</sampler>
+	<camera type="thinlens">
+		<float name="fov" value="25"/>
+		<integer name="width" value="800"/>
+		<integer name="height" value="600"/>
+		<transform name="toWorld">
+			<scale value="1.000000 1.000000 -1.000000"/>
+			<matrix value="0.08086740970611572,2.051692593596499e-09,-8.753717750664691e-10,0.0008814155007712543,-1.9369612580533158e-09,0.048848707228899,-0.06444646418094635,-0.7680339813232422,-1.1062983862331066e-09,0.06444646418094635,0.048848707228899,0.5993359684944153,0.0,0.0,0.0,1.0"/>
+		</transform>
+		<float name="apertureRadius" value="0.65"/>
+		<float name="focalDistance" value="12.25"/>
+	</camera>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Emission_Object_Light.obj"/>
+		<bsdf type="diffuse" name="Light">
+			<color name="albedo" value="0, 0, 0"/>
+		</bsdf>
+		<emitter type="area">
+			<color name="radiance" value="5.000000,5.000000,5.000000"/>
+		</emitter>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Material_Object_Material.obj"/>
+		<bsdf type="diffuse" name="Material">
+			<color name="albedo" value="0.800000,0.800000,0.3"/>
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/BackDrop_Object_Backdrop.obj"/>
+		<bsdf type="diffuse" name="Backdrop">
+			<texture type="image_texture" name="albedo">
+				<string name="filename" value="textures/full_data.png"/>
+				<float name="scale" value="1"/>
+				<string name="interpolation" value="bilinear"/>
+				<string name="extension" value="repeat"/>
+			</texture>
+			<!-- <color name="albedo" value="1,1,1"/> -->
+		</bsdf>
+	</mesh>
+	<mesh type="obj">
+		<string name="filename" value="meshes/Difuse_Object_Difuse.obj"/>
+		<bsdf type="diffuse" name="Difuse">
+			<color name="albedo" value="0.3,1.000000,1.000000"/>
+		</bsdf>
+	</mesh>
+</scene>
