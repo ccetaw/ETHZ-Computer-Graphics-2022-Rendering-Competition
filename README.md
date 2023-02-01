@@ -1,3 +1,5 @@
+This repo holds the final project of ETHz Computer Graphics cource. You could find the source code for this project as well as a non-complete tutorial-like report below. Useful resources for implementation are listed at the end. Hope this repo could help you quickly start building your customizd renderer!
+
 # Computer Graphics ETHz 2022 Rendering Project
 
 *Name: Jingyu Wang*  
