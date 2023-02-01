@@ -203,7 +203,7 @@ The PBRT book gives a nice example for the process. Here a simpler implementatio
 
 | nori                                   | mitsuba |
 | -------------------------------------- | ------- |
-| ![300](/attachments/AnyConv.com__envmap_nori.png%5C) | ![300](/attachments/AnyConv.com__envmap_mitsuba.png%5C)        |
+| ![300](/attachments/AnyConv.com__envmap_nori.png) | ![300](/attachments/AnyConv.com__envmap_mitsuba.png)        |
 
 **Remarks:**
 There are some slight differences which might because of nearest neighbor interpolation and bilinear interpolation. All integrators are changed to incorporate environment mapping. 
@@ -257,13 +257,13 @@ nori / mitsuba
 
 | nori | mitsuba |
 | ---- | ------- |
-| ![](/attachments/AnyConv.com__texture_nori.png%5C)     | ![](/attachments/AnyConv.com__texture_mitsuba.png%5C)        |
+| ![](/attachments/AnyConv.com__texture_nori.png)     | ![](/attachments/AnyConv.com__texture_mitsuba.png)        |
 
 scaling
 
 | shrink | expand |
 | ------ | ------ |
-| ![](/attachments/AnyConv.com__texture_nori_scale05.png%5C)       | ![](/attachments/AnyConv.com__texture_nori_scale2.png%5C)       |
+| ![](/attachments/AnyConv.com__texture_nori_scale05.png)       | ![](/attachments/AnyConv.com__texture_nori_scale2.png)       |
 
 **Remarks:**
 Check the integrators if they correctly set the uv coordinates in BSDFQueryRecord. 
@@ -291,8 +291,8 @@ The algorithm is simple, we only need to add an outer loop to the main rendering
 
 | parameters                                                           | results                            |
 | -------------------------------------------------------------------- | ---------------------------------- |
-| - 400 iterations <br> - 250000 photons <br> - 32 spp <br> - 17.6 min | ![500](/attachments/AnyConv.com__pppm400.png%5C) |
-| - 1 iterations <br> - 10000000 photons <br> - 512 spp <br> - 1.7 min | ![500](/attachments/photonmapper.png%5C)                                   |
+| - 400 iterations <br> - 250000 photons <br> - 32 spp <br> - 17.6 min | ![500](/attachments/AnyConv.com__pppm400.png) |
+| - 1 iterations <br> - 10000000 photons <br> - 512 spp <br> - 1.7 min | ![500](/attachments/photonmapper.png)                                   |
 
 
 | Iteration | Image                           |
@@ -325,7 +325,7 @@ A problem for validation is that, parameters of lens for cameras in nori are pro
 
 | nori | mitsuba |
 | ---- | ------- |
-| ![](/attachments/AnyConv.com__dof_nori.png%5C)     | ![](/attachments/AnyConv.com__dof_mitsuba.png%5C)        |
+| ![](/attachments/AnyConv.com__dof_nori.png)     | ![](/attachments/AnyConv.com__dof_mitsuba.png)        |
 
 ### Additional Features
 
